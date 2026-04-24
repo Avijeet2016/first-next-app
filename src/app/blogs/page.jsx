@@ -1,3 +1,5 @@
+
+import Link from 'next/link';
 import React from 'react';
 
 const BlogsPage = () => {
@@ -50,15 +52,16 @@ const BlogsPage = () => {
     ];
 
     return (
-        <div>
-            <h2>Blogs Page</h2>
-            {
-                blogs.map(blog => <div key={blog.id}>
-                    <h4 className='text-3xl font-bold text-green-700'>{blog.title}</h4>
-                    <button className='btn btn-primary'>Show Details</button>
-                </div>)
-            }
-        </div>
+      <div>
+        <h2>Blogs Page</h2>
+        {blogs.map((blog) => (
+          <div key={blog.id}>
+            <h4 className="text-3xl font-bold text-green-700">
+              <Link href={`/blogs/${blog.id}`}>{blog.title}</Link>
+            </h4>
+          </div>
+        ))}
+      </div>
     );
 };
 
