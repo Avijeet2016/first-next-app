@@ -9,7 +9,7 @@ const FoodDetailPage = async ({params}) => {
     );
     const data = await res.json();
     const food = data.data;
-    const {id, dish_name, category, image_link} = food;
+    const {id, dish_name, category, image_link, approximate_nutrition_per_serving } = food;
 
     return (
       <div className="card bg-base-100 shadow-sm">
@@ -27,6 +27,15 @@ const FoodDetailPage = async ({params}) => {
             {dish_name}
           </h2>
           <p>{category}</p>
+        </div>
+        <div> 
+          {Object.entries(approximate_nutrition_per_serving).map(
+            ([key, value]) => (
+              <p key={key}>
+                {key}: {value}
+              </p>
+            ),
+          )}
         </div>
       </div>
     );
