@@ -58,6 +58,22 @@ const Navbar = () => {
             Posts
           </Link>
         </li>
+        <li>
+          <Link
+            className={pathName === "/todos" ? "text-blue-500" : ""}
+            href="/todos"
+          >
+            Todos
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={pathName === "/foods" ? "text-blue-500" : ""}
+            href="/foods"
+          >
+            Foods
+          </Link>
+        </li>
       </>
     );
     return (
